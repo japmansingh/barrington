@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Privacy Breach Calculator</title>
+   <style>
+     .calculator {
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+     }
+     .calculator label {
+        display: block;
+        margin-top: 20px;
+     }
+     .calculator input,
+     .calculator select,
+     .calculator button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+     }
+     .calculator button {
+        background-color: #03C0FE;
+        color: white;
+        cursor: pointer;
+     }
+     .calculator button:hover {
+        opacity: 0.8;
+     }
+     .calculator #result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+     }
+   </style>
+
+</head><body><p></p>
+<h1>Insert Image</h1>
+
+<p></p>
+<!-- Template JavaScript -->
+<p>
+<script src="/shared/HTML-Template-Library/HTML-Templates-V3/pages/../_assets/js/scripts.min.js"></script>
+</p>
+<div class="calculator">
+<h1>Privacy Breach Calculator</h1>
+<label for="employees">Number of Employees:</label> <input type="text" id="employees" name="employees" oninput="formatNumber(this)"> <label for="revenue">Annual Revenue (CAD):</label> <input type="text" id="revenue" name="revenue" oninput="formatNumber(this)"> <label for="clients">Number of Clients:</label> <input type="text" id="clients" name="clients" oninput="formatNumber(this)"> <label for="industry">Industry:</label><select id="industry" name="industry">
+<option value="400">Healthcare</option>
+<option value="350">IT</option>
+<option value="325">Consulting</option>
+<option value="300">Public Sector</option>
+<option value="250">Manufacturing</option>
+<option value="200">Retail</option>
+<option value="275">Services</option>
+</select><button onclick="calculate()">Calculate</button>
+<div id="result"></div>
+</div>
+<p><script>
+function formatNumber(input) {
+
+    var value = input.value.replace(/,/g, '');
+
+    input.value = new Intl.NumberFormat().format(value);
+}
+
+function calculate() {
+    var employees = document.getElementById('employees').value.replace(/,/g, '');
+    var clients = document.getElementById('clients').value.replace(/,/g, '');
+    var records = parseInt(employees) + parseInt(clients);
+    var costPerRecord = document.getElementById('industry').value;
+    var result = records * costPerRecord;
+    document.getElementById('result').innerHTML = "Estimated cost of breach: $" + new Intl.NumberFormat().format(result) + " CAD";
+}
+</script></p></body></html>
