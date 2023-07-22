@@ -1,23 +1,27 @@
-body {
-    font-family: Arial, sans-serif;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-header {
-    margin-bottom: 50px;
+::-webkit-scrollbar-track {
+  background: #222;
 }
 
-#about img {
-    max-width: 100%;
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Simple animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .card {
-    margin-bottom: 30px;
-}
-
-.education-item, .experience-item {
-    margin-bottom: 20px;
-}
-
-section {
-    margin-bottom: 50px;
+  animation: fadeIn 1s ease-in;
 }
