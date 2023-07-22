@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+#about img {
+    max-width: 100%;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.education-item, .experience-item {
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
